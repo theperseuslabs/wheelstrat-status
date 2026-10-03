@@ -92,3 +92,6 @@ status-website:
       href: /
     - title: Back to site
       href: https://wheelstrategyoptions.com
+
+i18n:
+  footer: "© Wheel Strategy Options · [Back to wheelstrategyoptions.com](https://wheelstrategyoptions.com)"
