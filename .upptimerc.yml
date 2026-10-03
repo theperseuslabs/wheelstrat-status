@@ -1,31 +1,53 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Status page for wheelstrategyoptions.com, served from GitHub Pages so it stays
+# up when the Hostinger VPS (or Cloudflare's proxy) is down. Every check runs
+# from GitHub's runners against the public URLs, i.e. the path a user takes.
+
+owner: theperseuslabs
+repo: wheelstrat-status
+
+# Sent as the User-Agent on every check. Cloudflare needs a WAF skip rule for
+# it, otherwise Bot Fight Mode can challenge GitHub's datacenter IPs and the
+# page reports a false outage.
+user-agent: wheelstrat-status-check
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Website
+    url: https://wheelstrategyoptions.com
+    # A 200 alone is not enough: Cloudflare can answer 200 from cache while
+    # the origin is dead.
+    __dangerous__body_down_if_text_missing: "Wheel Strategy Screener"
+    maxResponseTime: 8000
+
+  - name: Web app
+    url: https://wheelstrategyoptions.com/api/health
+    __dangerous__body_down_if_text_missing: '"status":"ok"'
+    maxResponseTime: 8000
+
+  - name: Screener API
+    # Switch to https://go.wheelstrategyoptions.com/readyz once the
+    # feat/api-health-endpoints change is deployed.
+    url: https://go.wheelstrategyoptions.com/wheelstrat/availableFilters
+    maxResponseTime: 8000
+
+  - name: Options data
+    # Database-backed, so this is the one that goes red when Postgres is the
+    # problem rather than the box.
+    url: https://go.wheelstrategyoptions.com/wheelstrat/topStocksByIvr
+    __dangerous__body_down_if_text_missing: '"stocks"'
+    maxResponseTime: 15000
+
+  - name: MCP server
+    url: https://mcp.wheelstrategyoptions.com/readyz
+    __dangerous__body_down_if_text_missing: "ready"
+    maxResponseTime: 8000
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.wheelstrategyoptions.com
+  name: Wheel Strategy Options Status
+  introTitle: "**Wheel Strategy Options** status"
+  introMessage: Live availability of the website, screener, and options data, checked every 5 minutes from outside our own infrastructure.
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+    - title: Back to site
+      href: https://wheelstrategyoptions.com
