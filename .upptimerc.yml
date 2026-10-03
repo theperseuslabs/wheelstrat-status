@@ -73,8 +73,14 @@ status-website:
     --submit-button-background-color: #c6b57b;
     --submit-button-border-color: #c6b57b;
     --submit-button-color: #0a0a0a;
-    --graph-filter: grayscale(1) sepia(1) saturate(1.4) brightness(0.95);
     }
+    article.graph { background-image: none !important; overflow: hidden; }
+    article.graph::before { content: ""; position: absolute; inset: 0;
+    background-image: var(--background); background-repeat: no-repeat;
+    background-position: 100% 50%; background-size: contain;
+    filter: grayscale(1) sepia(1) saturate(1.3) brightness(0.85); opacity: 0.55;
+    pointer-events: none; }
+    article.graph > * { position: relative; }
     body { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     h1, h2, h3, h4 { letter-spacing: -0.02em; }
     article { border-radius: 0.5rem; }
