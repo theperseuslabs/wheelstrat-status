@@ -41,6 +41,12 @@ sites:
     __dangerous__body_down_if_text_missing: "ready"
     maxResponseTime: 8000
 
+# The page's "last updated" time only moves when a status changes or when the
+# response-time job records a measurement, so run that every 30 minutes
+# instead of once a day.
+workflowSchedule:
+  responseTime: "*/30 * * * *"
+
 status-website:
   cname: status.wheelstrategyoptions.com
   name: Wheel Strategy Options Status
