@@ -1,22 +1,29 @@
 // Cloudflare Worker that starts the Upptime workflows on a fixed timetable.
 //
-// GitHub's own cron did not fire the 5-minute uptime check for this repo, so
-// the checks are driven from here instead. The workflows keep their GitHub
-// schedules as a fallback. Checks still run on GitHub's runners, so this only
-// replaces the clock, not the vantage point.
+// GitHub's own cron fires the 5-minute uptime check for this repo only every
+// few hours, so the checks are driven from here instead. The workflows keep
+// their GitHub schedules as a fallback. Checks still run on GitHub's runners,
+// so this only replaces the clock, not the vantage point.
 //
-// Cron triggers (set on the Worker): "*/5 * * * *" and "*/30 * * * *".
+// Cron trigger (set on the Worker): "* * * * *". The timetable lives in
+// workflowsFor() below, so changing it never needs a dashboard edit.
 // Secret: GITHUB_TOKEN, a fine-grained token with Actions read-write on REPO.
 
 const REPO = "theperseuslabs/wheelstrat-status";
 const REF = "master";
 
-const WORKFLOWS_BY_CRON = {
-  "*/5 * * * *": ["uptime.yml"],
+// All Upptime workflows share one concurrency group that keeps a single
+// pending run: starting three in the same minute cancels one of them. So each
+// workflow gets its own minute, two minutes apart.
+function workflowsFor(minute) {
+  const workflows = [];
+  if (minute % 5 === 0) workflows.push("uptime.yml");
   // Response Time CI is what moves the page's "last updated" time and feeds
   // the graphs; Summary CI refreshes the averages the front page reads.
-  "*/30 * * * *": ["response-time.yml", "summary.yml"],
-};
+  if (minute % 30 === 2) workflows.push("response-time.yml");
+  if (minute % 30 === 4) workflows.push("summary.yml");
+  return workflows;
+}
 
 async function dispatch(workflow, token) {
   const res = await fetch(
@@ -39,7 +46,7 @@ async function dispatch(workflow, token) {
 
 export default {
   async scheduled(event, env, ctx) {
-    const workflows = WORKFLOWS_BY_CRON[event.cron] ?? [];
-    ctx.waitUntil(Promise.all(workflows.map((w) => dispatch(w, env.GITHUB_TOKEN))));
+    const minute = new Date(event.scheduledTime).getUTCMinutes();
+    ctx.waitUntil(Promise.all(workflowsFor(minute).map((w) => dispatch(w, env.GITHUB_TOKEN))));
   },
 };
