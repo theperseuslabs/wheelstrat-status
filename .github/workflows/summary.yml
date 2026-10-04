@@ -53,3 +53,4 @@ jobs:
           command: "readme"
         env:
           GH_PAT: ${{ steps.app_token.outputs.token || secrets.GH_PAT || github.token }}
+
