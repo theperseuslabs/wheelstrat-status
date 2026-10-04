@@ -1,14 +1,64 @@
-<!DOCTYPE html>
-<!--
-  Cloudflare custom error page for 5xx errors (origin unreachable: 520-527).
-  Shown instead of Cloudflare's default page when the VPS is down.
+// Cloudflare Worker for wheelstrategyoptions.com: shows a branded "temporarily
+// unavailable" page, linking to the status page, when the VPS can't serve a
+// page. Custom error pages need a paid Cloudflare plan; this does the same job
+// on the free one.
+//
+// Routes: wheelstrategyoptions.com/* and www.wheelstrategyoptions.com/*, both
+// with the failure mode set to "Fail open", so the site keeps working if the
+// free tier's daily request limit runs out.
+//
+// Every other request and response passes through untouched.
 
-  Everything is inline and nothing loads from wheelstrategyoptions.com, because
-  that host is the thing that is down. The live status line reads the status
-  repo on GitHub; if that fails the page still works without it.
+// 502-504 come from the proxy on the VPS when the app behind it is down;
+// 520-527 and 530 are Cloudflare's own "origin unreachable" errors.
+const ORIGIN_DOWN = new Set([502, 503, 504, 520, 521, 522, 523, 524, 525, 526, 527, 530]);
 
-  ::CLOUDFLARE_ERROR_500S_BOX:: is required by Cloudflare on 5xx pages.
--->
+// Only browser page loads get the page. API calls, Next.js data requests and
+// assets keep their real error so client code can handle it.
+function isPageLoad(request) {
+  return request.method === "GET" && (request.headers.get("Accept") || "").includes("text/html");
+}
+
+function outagePage(request, originStatus) {
+  const ray = request.headers.get("cf-ray") || "unavailable";
+  return new Response(PAGE.replace("__RAY_ID__", ray), {
+    status: 503,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store",
+      "Retry-After": "60",
+      "X-Origin-Status": String(originStatus),
+    },
+  });
+}
+
+export default {
+  async fetch(request, env, ctx) {
+    // If this Worker itself throws, Cloudflare sends the request to the origin
+    // as though the Worker were not there.
+    ctx.passThroughOnException();
+
+    const pageLoad = isPageLoad(request);
+    // Lets us look at the page without taking the site down:
+    // https://wheelstrategyoptions.com/?__preview_outage=1
+    if (pageLoad && new URL(request.url).searchParams.has("__preview_outage")) {
+      return outagePage(request, "preview");
+    }
+    let response;
+    try {
+      response = await fetch(request);
+    } catch (err) {
+      if (pageLoad) return outagePage(request, "unreachable");
+      throw err;
+    }
+    if (pageLoad && ORIGIN_DOWN.has(response.status)) {
+      return outagePage(request, response.status);
+    }
+    return response;
+  },
+};
+
+const PAGE = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -57,8 +107,7 @@
   <p class="retry">This page retries automatically in <span id="countdown">60</span> seconds.</p>
 
   <div class="tech">
-    Reference: ::RAY_ID::
-    ::CLOUDFLARE_ERROR_500S_BOX::
+    Reference: __RAY_ID__
   </div>
 </main>
 
@@ -90,4 +139,4 @@
     });
 </script>
 </body>
-</html>
+</html>`;
