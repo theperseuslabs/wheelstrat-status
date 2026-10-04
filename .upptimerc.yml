@@ -10,6 +10,18 @@ repo: wheelstrat-status
 # page reports a false outage.
 user-agent: wheelstrat-status-check
 
+# Outage and recovery emails. Upptime only reads the repository secrets named
+# here; the values themselves are set under Settings > Secrets > Actions.
+secrets:
+  - NOTIFICATION_EMAIL
+  - NOTIFICATION_EMAIL_FROM
+  - NOTIFICATION_EMAIL_TO
+  - NOTIFICATION_EMAIL_SMTP
+  - NOTIFICATION_EMAIL_SMTP_HOST
+  - NOTIFICATION_EMAIL_SMTP_PORT
+  - NOTIFICATION_EMAIL_SMTP_USERNAME
+  - NOTIFICATION_EMAIL_SMTP_PASSWORD
+
 sites:
   - name: Website
     url: https://wheelstrategyoptions.com
