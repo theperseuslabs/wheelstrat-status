@@ -5,23 +5,23 @@
 // their GitHub schedules as a fallback. Checks still run on GitHub's runners,
 // so this only replaces the clock, not the vantage point.
 //
-// Cron trigger (set on the Worker): "* * * * *". The timetable lives in
+// Cron trigger (set on the Worker): "*/5 * * * *". The timetable lives in
 // workflowsFor() below, so changing it never needs a dashboard edit.
 // Secret: GITHUB_TOKEN, a fine-grained token with Actions read-write on REPO.
 
 const REPO = "theperseuslabs/wheelstrat-status";
 const REF = "master";
 
-// All Upptime workflows share one concurrency group that keeps a single
-// pending run: starting three in the same minute cancels one of them. So each
-// workflow gets its own minute, two minutes apart.
+// All Upptime workflows share one concurrency group: one run executes, one
+// waits, and a third started in the same window gets cancelled. So a tick
+// never starts more than two, and the two extra jobs sit on different ticks.
 function workflowsFor(minute) {
-  const workflows = [];
-  if (minute % 5 === 0) workflows.push("uptime.yml");
+  if (minute % 5 !== 0) return [];
+  const workflows = ["uptime.yml"];
   // Response Time CI is what moves the page's "last updated" time and feeds
   // the graphs; Summary CI refreshes the averages the front page reads.
-  if (minute % 30 === 2) workflows.push("response-time.yml");
-  if (minute % 30 === 4) workflows.push("summary.yml");
+  if (minute % 30 === 10) workflows.push("response-time.yml");
+  if (minute % 30 === 20) workflows.push("summary.yml");
   return workflows;
 }
 
@@ -46,6 +46,9 @@ async function dispatch(workflow, token) {
 
 export default {
   async scheduled(event, env, ctx) {
+    // The first version of this Worker also had a 30-minute trigger. If it is
+    // still configured, ignore it so those ticks don't start everything twice.
+    if (event.cron === "*/30 * * * *") return;
     const minute = new Date(event.scheduledTime).getUTCMinutes();
     ctx.waitUntil(Promise.all(workflowsFor(minute).map((w) => dispatch(w, env.GITHUB_TOKEN))));
   },
