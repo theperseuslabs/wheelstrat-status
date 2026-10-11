@@ -1,7 +1,7 @@
 url: https://wheelstrategyoptions.com/api/health
-status: up
-code: 200
-responseTime: 54
-lastUpdated: 2026-10-11T21:40:33.417Z
+status: down
+code: 503
+responseTime: 57
+lastUpdated: 2026-10-11T22:01:52.652Z
 startTime: 2026-10-03T23:17:30.623Z
 generator: Upptime <https://github.com/upptime/upptime>
