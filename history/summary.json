@@ -76,19 +76,19 @@
     "url": "https://mcp.wheelstrategyoptions.com/readyz",
     "icon": "https://icons.duckduckgo.com/ip3/mcp.wheelstrategyoptions.com.ico",
     "slug": "mcp-server",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.96%",
+    "uptimeDay": "99.66%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.96%",
+    "uptimeYear": "99.96%",
     "time": 336,
-    "timeDay": 399,
+    "timeDay": 398,
     "timeWeek": 338,
     "timeMonth": 336,
     "timeYear": 336,
     "dailyMinutesDown": {
-      "2026-10-13": 0
+      "2026-10-13": 5
     }
   }
 ]
