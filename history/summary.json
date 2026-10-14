@@ -4,18 +4,20 @@
     "url": "https://wheelstrategyoptions.com",
     "icon": "https://icons.duckduckgo.com/ip3/wheelstrategyoptions.com.ico",
     "slug": "website",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 389,
-    "timeDay": 582,
-    "timeWeek": 411,
-    "timeMonth": 389,
-    "timeYear": 389,
-    "dailyMinutesDown": {}
+    "time": 415,
+    "timeDay": 836,
+    "timeWeek": 449,
+    "timeMonth": 415,
+    "timeYear": 415,
+    "dailyMinutesDown": {
+      "2026-10-14": 0
+    }
   },
   {
     "name": "Web app",
@@ -47,7 +49,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 340,
-    "timeDay": 547,
+    "timeDay": 542,
     "timeWeek": 358,
     "timeMonth": 340,
     "timeYear": 340,
@@ -64,11 +66,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 584,
-    "timeDay": 464,
-    "timeWeek": 362,
-    "timeMonth": 584,
-    "timeYear": 584,
+    "time": 589,
+    "timeDay": 516,
+    "timeWeek": 370,
+    "timeMonth": 589,
+    "timeYear": 589,
     "dailyMinutesDown": {}
   },
   {
@@ -84,7 +86,7 @@
     "uptimeYear": "100.00%",
     "time": 390,
     "timeDay": 619,
-    "timeWeek": 411,
+    "timeWeek": 412,
     "timeMonth": 390,
     "timeYear": 390,
     "dailyMinutesDown": {}
