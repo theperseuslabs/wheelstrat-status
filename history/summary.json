@@ -4,19 +4,19 @@
     "url": "https://wheelstrategyoptions.com",
     "icon": "https://icons.duckduckgo.com/ip3/wheelstrategyoptions.com.ico",
     "slug": "website",
-    "status": "down",
-    "uptime": "99.79%",
-    "uptimeDay": "97.11%",
-    "uptimeWeek": "99.59%",
-    "uptimeMonth": "99.79%",
-    "uptimeYear": "99.79%",
+    "status": "up",
+    "uptime": "99.78%",
+    "uptimeDay": "96.98%",
+    "uptimeWeek": "99.57%",
+    "uptimeMonth": "99.78%",
+    "uptimeYear": "99.78%",
     "time": 476,
-    "timeDay": 966,
+    "timeDay": 960,
     "timeWeek": 607,
     "timeMonth": 476,
     "timeYear": 476,
     "dailyMinutesDown": {
-      "2026-10-17": 42
+      "2026-10-17": 43
     }
   },
   {
@@ -24,19 +24,19 @@
     "url": "https://wheelstrategyoptions.com/api/health",
     "icon": "https://icons.duckduckgo.com/ip3/wheelstrategyoptions.com.ico",
     "slug": "web-app",
-    "status": "down",
-    "uptime": "99.80%",
-    "uptimeDay": "97.19%",
-    "uptimeWeek": "99.60%",
-    "uptimeMonth": "99.80%",
-    "uptimeYear": "99.80%",
+    "status": "up",
+    "uptime": "99.79%",
+    "uptimeDay": "97.06%",
+    "uptimeWeek": "99.58%",
+    "uptimeMonth": "99.79%",
+    "uptimeYear": "99.79%",
     "time": 234,
-    "timeDay": 587,
-    "timeWeek": 307,
+    "timeDay": 585,
+    "timeWeek": 308,
     "timeMonth": 234,
     "timeYear": 234,
     "dailyMinutesDown": {
-      "2026-10-17": 41
+      "2026-10-17": 42
     }
   },
   {
@@ -44,19 +44,19 @@
     "url": "https://go.wheelstrategyoptions.com/wheelstrat/availableFilters",
     "icon": "https://icons.duckduckgo.com/ip3/go.wheelstrategyoptions.com.ico",
     "slug": "screener-api",
-    "status": "down",
-    "uptime": "99.80%",
-    "uptimeDay": "97.27%",
-    "uptimeWeek": "99.61%",
-    "uptimeMonth": "99.80%",
-    "uptimeYear": "99.80%",
-    "time": 367,
-    "timeDay": 660,
-    "timeWeek": 426,
-    "timeMonth": 367,
-    "timeYear": 367,
+    "status": "up",
+    "uptime": "99.79%",
+    "uptimeDay": "97.14%",
+    "uptimeWeek": "99.59%",
+    "uptimeMonth": "99.79%",
+    "uptimeYear": "99.79%",
+    "time": 368,
+    "timeDay": 670,
+    "timeWeek": 429,
+    "timeMonth": 368,
+    "timeYear": 368,
     "dailyMinutesDown": {
-      "2026-10-17": 39
+      "2026-10-17": 41
     }
   },
   {
@@ -64,19 +64,19 @@
     "url": "https://go.wheelstrategyoptions.com/wheelstrat/topStocksByIvr",
     "icon": "https://icons.duckduckgo.com/ip3/go.wheelstrategyoptions.com.ico",
     "slug": "options-data",
-    "status": "down",
-    "uptime": "99.81%",
-    "uptimeDay": "97.35%",
-    "uptimeWeek": "99.62%",
-    "uptimeMonth": "99.81%",
-    "uptimeYear": "99.81%",
-    "time": 552,
-    "timeDay": 639,
-    "timeWeek": 387,
-    "timeMonth": 552,
-    "timeYear": 552,
+    "status": "up",
+    "uptime": "99.80%",
+    "uptimeDay": "97.22%",
+    "uptimeWeek": "99.60%",
+    "uptimeMonth": "99.80%",
+    "uptimeYear": "99.80%",
+    "time": 555,
+    "timeDay": 677,
+    "timeWeek": 393,
+    "timeMonth": 555,
+    "timeYear": 555,
     "dailyMinutesDown": {
-      "2026-10-17": 38
+      "2026-10-17": 40
     }
   },
   {
