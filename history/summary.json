@@ -10,11 +10,11 @@
     "uptimeWeek": "99.57%",
     "uptimeMonth": "99.79%",
     "uptimeYear": "99.79%",
-    "time": 480,
-    "timeDay": 1011,
-    "timeWeek": 628,
-    "timeMonth": 480,
-    "timeYear": 480,
+    "time": 481,
+    "timeDay": 853,
+    "timeWeek": 631,
+    "timeMonth": 481,
+    "timeYear": 481,
     "dailyMinutesDown": {
       "2026-10-17": 43
     }
@@ -30,11 +30,11 @@
     "uptimeWeek": "99.58%",
     "uptimeMonth": "99.80%",
     "uptimeYear": "99.80%",
-    "time": 237,
-    "timeDay": 600,
+    "time": 238,
+    "timeDay": 603,
     "timeWeek": 319,
-    "timeMonth": 237,
-    "timeYear": 237,
+    "timeMonth": 238,
+    "timeYear": 238,
     "dailyMinutesDown": {
       "2026-10-17": 42
     }
@@ -50,11 +50,11 @@
     "uptimeWeek": "99.59%",
     "uptimeMonth": "99.80%",
     "uptimeYear": "99.80%",
-    "time": 369,
-    "timeDay": 723,
-    "timeWeek": 438,
-    "timeMonth": 369,
-    "timeYear": 369,
+    "time": 370,
+    "timeDay": 740,
+    "timeWeek": 440,
+    "timeMonth": 370,
+    "timeYear": 370,
     "dailyMinutesDown": {
       "2026-10-17": 41
     }
@@ -70,11 +70,11 @@
     "uptimeWeek": "99.60%",
     "uptimeMonth": "99.81%",
     "uptimeYear": "99.81%",
-    "time": 546,
-    "timeDay": 731,
-    "timeWeek": 412,
-    "timeMonth": 546,
-    "timeYear": 546,
+    "time": 548,
+    "timeDay": 768,
+    "timeWeek": 417,
+    "timeMonth": 548,
+    "timeYear": 548,
     "dailyMinutesDown": {
       "2026-10-17": 40
     }
@@ -85,19 +85,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/mcp.wheelstrategyoptions.com.ico",
     "slug": "mcp-server",
     "status": "up",
-    "uptime": "99.81%",
-    "uptimeDay": "97.26%",
-    "uptimeWeek": "99.61%",
-    "uptimeMonth": "99.81%",
-    "uptimeYear": "99.81%",
+    "uptime": "99.82%",
+    "uptimeDay": "97.45%",
+    "uptimeWeek": "99.64%",
+    "uptimeMonth": "99.82%",
+    "uptimeYear": "99.82%",
     "time": 437,
-    "timeDay": 925,
-    "timeWeek": 538,
+    "timeDay": 933,
+    "timeWeek": 539,
     "timeMonth": 437,
     "timeYear": 437,
     "dailyMinutesDown": {
-      "2026-10-17": 37,
-      "2026-10-18": 3
+      "2026-10-17": 37
     }
   }
 ]
