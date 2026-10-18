@@ -1,7 +1,7 @@
 url: https://mcp.wheelstrategyoptions.com/readyz
-status: up
+status: degraded
 code: 200
-responseTime: 296
-lastUpdated: 2026-10-18T12:43:20.343Z
+responseTime: 13699
+lastUpdated: 2026-10-18T12:57:41.854Z
 startTime: 2026-10-03T23:17:31.858Z
 generator: Upptime <https://github.com/upptime/upptime>
