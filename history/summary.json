@@ -11,7 +11,7 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 477,
-    "timeDay": 443,
+    "timeDay": 447,
     "timeWeek": 543,
     "timeMonth": 477,
     "timeYear": 477,
@@ -23,19 +23,17 @@
     "icon": "https://icons.duckduckgo.com/ip3/wheelstrategyoptions.com.ico",
     "slug": "web-app",
     "status": "up",
-    "uptime": "99.84%",
+    "uptime": "100.00%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "99.58%",
-    "uptimeMonth": "99.84%",
-    "uptimeYear": "99.84%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 251,
-    "timeDay": 292,
+    "timeDay": 296,
     "timeWeek": 330,
     "timeMonth": 251,
     "timeYear": 251,
-    "dailyMinutesDown": {
-      "2026-10-17": 42
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Screener API",
@@ -48,11 +46,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 382,
-    "timeDay": 366,
-    "timeWeek": 444,
-    "timeMonth": 382,
-    "timeYear": 382,
+    "time": 381,
+    "timeDay": 364,
+    "timeWeek": 443,
+    "timeMonth": 381,
+    "timeYear": 381,
     "dailyMinutesDown": {}
   },
   {
@@ -66,11 +64,11 @@
     "uptimeWeek": "99.60%",
     "uptimeMonth": "99.85%",
     "uptimeYear": "99.85%",
-    "time": 500,
-    "timeDay": 313,
-    "timeWeek": 395,
-    "timeMonth": 500,
-    "timeYear": 500,
+    "time": 499,
+    "timeDay": 312,
+    "timeWeek": 394,
+    "timeMonth": 499,
+    "timeYear": 499,
     "dailyMinutesDown": {
       "2026-10-17": 40
     }
@@ -81,18 +79,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/mcp.wheelstrategyoptions.com.ico",
     "slug": "mcp-server",
     "status": "up",
-    "uptime": "99.86%",
+    "uptime": "100.00%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "99.64%",
-    "uptimeMonth": "99.86%",
-    "uptimeYear": "99.86%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 446,
     "timeDay": 381,
     "timeWeek": 526,
     "timeMonth": 446,
     "timeYear": 446,
-    "dailyMinutesDown": {
-      "2026-10-17": 37
-    }
+    "dailyMinutesDown": {}
   }
 ]
