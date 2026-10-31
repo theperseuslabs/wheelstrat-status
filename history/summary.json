@@ -31,7 +31,7 @@
     "uptimeMonth": "99.89%",
     "uptimeYear": "99.89%",
     "time": 250,
-    "timeDay": 202,
+    "timeDay": 197,
     "timeWeek": 232,
     "timeMonth": 250,
     "timeYear": 250,
@@ -51,8 +51,8 @@
     "uptimeMonth": "99.89%",
     "uptimeYear": "99.89%",
     "time": 377,
-    "timeDay": 303,
-    "timeWeek": 322,
+    "timeDay": 310,
+    "timeWeek": 323,
     "timeMonth": 377,
     "timeYear": 377,
     "dailyMinutesDown": {
@@ -70,11 +70,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.90%",
     "uptimeYear": "99.90%",
-    "time": 436,
-    "timeDay": 247,
-    "timeWeek": 261,
-    "timeMonth": 436,
-    "timeYear": 436,
+    "time": 437,
+    "timeDay": 256,
+    "timeWeek": 263,
+    "timeMonth": 437,
+    "timeYear": 437,
     "dailyMinutesDown": {
       "2026-10-17": 40
     }
@@ -84,19 +84,20 @@
     "url": "https://mcp.wheelstrategyoptions.com/readyz",
     "icon": "https://icons.duckduckgo.com/ip3/mcp.wheelstrategyoptions.com.ico",
     "slug": "mcp-server",
-    "status": "up",
-    "uptime": "99.91%",
-    "uptimeDay": "100.00%",
+    "status": "down",
+    "uptime": "99.90%",
+    "uptimeDay": "99.97%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "99.91%",
-    "uptimeYear": "99.91%",
+    "uptimeMonth": "99.90%",
+    "uptimeYear": "99.90%",
     "time": 437,
-    "timeDay": 321,
+    "timeDay": 319,
     "timeWeek": 362,
     "timeMonth": 437,
     "timeYear": 437,
     "dailyMinutesDown": {
-      "2026-10-17": 37
+      "2026-10-17": 37,
+      "2026-10-31": 0
     }
   }
 ]
