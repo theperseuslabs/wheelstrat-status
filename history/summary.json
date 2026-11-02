@@ -46,7 +46,7 @@
     "slug": "screener-api",
     "status": "down",
     "uptime": "99.90%",
-    "uptimeDay": "99.96%",
+    "uptimeDay": "99.92%",
     "uptimeWeek": "99.99%",
     "uptimeMonth": "99.90%",
     "uptimeYear": "99.90%",
@@ -67,8 +67,8 @@
     "slug": "options-data",
     "status": "down",
     "uptime": "99.91%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
+    "uptimeDay": "99.93%",
+    "uptimeWeek": "99.99%",
     "uptimeMonth": "99.91%",
     "uptimeYear": "99.91%",
     "time": 414,
@@ -78,7 +78,7 @@
     "timeYear": 414,
     "dailyMinutesDown": {
       "2026-10-17": 40,
-      "2026-11-02": 0
+      "2026-11-02": 1
     }
   },
   {
