@@ -1,7 +1,7 @@
 url: https://go.wheelstrategyoptions.com/wheelstrat/availableFilters
-status: up
-code: 200
-responseTime: 315
-lastUpdated: 2026-11-07T05:40:39.532Z
+status: down
+code: 502
+responseTime: 511
+lastUpdated: 2026-11-07T06:05:52.285Z
 startTime: 2026-10-03T23:17:30.947Z
 generator: Upptime <https://github.com/upptime/upptime>
